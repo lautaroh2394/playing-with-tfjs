@@ -10,5 +10,11 @@
   },
   "devDependencies": {
     "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@tensorflow-models/pose-detection": "^2.1.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.7.0",
+    "@tensorflow/tfjs-converter": "^4.7.0",
+    "@tensorflow/tfjs-core": "^4.7.0"
   }
 }

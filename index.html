@@ -2,12 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>TFJS Pruebas</title>
+    <!-- Require the peer dependencies of pose-detection. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+
+    <!-- You must explicitly require a TF.js backend if you're not using the TF.js union bundle. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- 
+      
+    -->
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <input type="file" accept="image/*" id="imageInput">
+      <br>
+      <div class="container" height="50">
+        <img id="uploadedImg"/>
+        <canvas id="posePoints" height="50" width="50"></canvas>
+      </div>
+      <button id="constantAnalisisButton">Analizar constantemente</button>
+      <div class="container" height="243">
+        <video id="video"></video>
+        <canvas id="constantAnalisisCanvas" height="243" width="300"></canvas>
+      </div>
+      <!--
+      <button id="constantAnalisisV2Button">Analizar constantemente versión 2</button>
+      <div class="container" height="243">
+        <canvas id="constantAnalisisCanvasTwo" height="243" width="300"></canvas>
+        <canvas id="constantAnalisisCanvasThree" height="243" width="300"></canvas>
+      </div>
+      -->
+      <br>
+      <button id="analize">Analizar</button>
+      
+      <br>
+      <div class="container">
+        <img id="imgTaken"/>
+        <canvas id="pictureCanvas"></canvas>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
