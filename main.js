@@ -9,24 +9,8 @@ const detectorConfig = {
 };
 
 await tf.setBackend('webgl')
-//await tf.setBackend('webgpu')
 
 const detector = await poseDetection.createDetector(poseDetection.SupportedModels.PoseNet, detectorConfig);
-
-imageInput.addEventListener('input', ()=>{
-  const file = imageInput.files[0]
-  uploadedImg.src = URL.createObjectURL(file)
-  uploadedImg.height = 250
-})
-
-uploadedImg.addEventListener('load', async ()=>{
-  posePoints.height = uploadedImg.height
-  posePoints.width = uploadedImg.width
-
-  const [poses] = await detector.estimatePoses(uploadedImg);
-  console.log(poses)
-  drawPoints(posePoints, poses.keypoints)
-})
 
 const drawPoints = (canvas, keypoints)=>{
   draws++
